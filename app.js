@@ -15,9 +15,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 require( './routes' )(app);
-// require( './modules/middlewares' )(app);
+require( './modules/middlewares' )(app);
 
 
 http.createServer(app).listen(port, function() {
-  console.log( 'Jaiminho entregando cartinhas em http://localhost:3000' );
+  console.log( 'Jaiminho delivering little letters at http://localhost:3000' );
 });
