@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 require( './routes' )(app);
-require( './modules/middlewares' )(app);
+// require( './modules/middlewares' )(app);
 
 
 http.createServer(app).listen(port, function() {
