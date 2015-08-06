@@ -1,14 +1,8 @@
+'use strict';
 var express = require('express');
 var router = express.Router();
-var db = require( '../modules/database' )();
+var cepController = require( '../controllers/cepController' );
 
-router.get('/:cep', function(request, response, next) {
-  var cep = request.params.cep;
-  db.get( cep, function( error, data ) {
-    if( error )
-      response.status( 404 ).json({ error: 'CEP ' + cep + ' not found' });
-    response.json( data );
-  });
-});
+router.get('/:cep', cepController.getCep);
 
 module.exports = router;

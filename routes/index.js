@@ -1,4 +1,4 @@
+'use strict';
 module.exports = function(app) {
-  var cep = require('./cep');
-  app.use('/cep', cep);
-}
+  app.use('/cep', require('./cep'));
+};
