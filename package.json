@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "DEBUG=jaiminho:* nodemon ./bin/www"
+    "start": "node ./bin/www",
+    "nodemon": "DEBUG=jaiminho:* nodemon ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
