@@ -2,7 +2,8 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../db/leveldb');
-var cepController = require('../controllers/cepController')(db);
+var cepModel = require('../models/cepModel')(db);
+var cepController = require('../controllers/cepController')(cepModel);
 
 router.get('/', function(request, response) {
   response.json({ message: 'Jaiminho CEP API' });
