@@ -10,8 +10,8 @@ router.get('/', function(request, response) {
 });
 
 router.post('/', cepController.create);
-router.get('/:cep', cepController.get);
+router.get('/:cep', cepController.retrieveOne);
 router.put('/:cep', cepController.update);
-router.delete('/:cep', cepController.delete);
+router.delete('/:cep', cepController.remove);
 
 module.exports = router;

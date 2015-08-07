@@ -9,18 +9,18 @@ function cepController(cepModel) {
   var $public = {};
   var $private = {};
 
-  $public.get = function get(request, response, next) {
+  $public.retrieveOne = function retrieveOne(request, response, next) {
     var cep = request.params.cep;
     cepModel.findOne(cep, function(error, data) {
       if(error)
-        response.status( 404 ).json({ error: 'CEP ' + cep + ' not found' });
-      response.json( data );
+        response.status(404).json({ error: 'CEP ' + cep + ' not found' });
+      response.json(data);
     });
   };
 
   $public.create = function create(request, response) {
     var cep = request.body.cep;
-    cepModel.create(request.body, function(error, data) {
+    cepModel.put(request.body, function(error, data) {
       if(error)
         response.status(500).json({ error: 'Internal Server Error' });
       response.json({ message: cep + ' succesfully inserted!' });
@@ -28,9 +28,16 @@ function cepController(cepModel) {
   };
 
   $public.update = function update(request, response) {
+    $public.create(request, response);
   };
 
-  $public.delete = function del(request, response) {
+  $public.remove = function remove(request, response) {
+    var cep = request.params.cep;
+    cepModel.remove(cep, function(error) {
+      if(error)
+        response.status(500).json({ error: 'Internal Server Error' });
+      response.json({ message: cep + ' succesfully removed!' });
+    });
   };
 
   return $public;

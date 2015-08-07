@@ -11,8 +11,12 @@ function cepModel(db) {
     return db.get(cep, callback);
   };
 
-  $public.create = function create(data, callback) {
+  $public.put = function put(data, callback) {
     return db.put(data.cep, data, callback);
+  };
+
+  $public.remove = function remove(cep, callback) {
+    return db.del(cep, callback);
   };
 
   return $public;
