@@ -12,7 +12,7 @@ You need to install `nodemon` globally:
 [sudo] npm i -g nodemon
 ```
 
-Install projects dependencies with command:
+Now, you need to install project dependencies with command:
 
 ```sh
 npm i
