@@ -18,17 +18,19 @@ function cepController(cepModel) {
     });
   };
 
-  $public.create = function create(request, response) {
+  $public.create = function create(request, response, message) {
     var cep = request.body.cep;
+    message = message || ' successfully inserted!';
     cepModel.put(request.body, function(error, data) {
       if(error)
         response.status(500).json({ error: 'Internal Server Error' });
-      response.json({ message: cep + ' succesfully inserted!' });
+      response.json({ message: cep + message });
     });
   };
 
   $public.update = function update(request, response) {
-    $public.create(request, response);
+    var message = ' successfully updated!';
+    $public.create(request, response, message);
   };
 
   $public.remove = function remove(request, response) {
