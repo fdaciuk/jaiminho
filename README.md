@@ -17,3 +17,14 @@ Install projects dependencies with command:
 ```sh
 npm i
 ```
+
+
+## Usage
+
+### Running
+
+Run jaiminho in debug mode with command:
+
+```sh
+npm run nodemon
+```
