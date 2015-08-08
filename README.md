@@ -6,7 +6,7 @@
 
 ## Dependencies
 
-You need `nodemon` installed globally:
+You need to install `nodemon` globally:
 
 ```sh
 [sudo] npm i -g nodemon
