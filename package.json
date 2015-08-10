@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "nodemon": "DEBUG=jaiminho:* DB=mongodb nodemon ./bin/www"
+    "nodemon": "DEBUG=jaiminho:* DB=leveldb nodemon ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
