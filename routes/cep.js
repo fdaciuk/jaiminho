@@ -1,9 +1,12 @@
 'use strict';
 var express = require('express');
 var router = express.Router();
-var db = require('../db/leveldb');
-var cepModel = require('../models/cepModel')(db);
-var cepController = require('../controllers/cepController')(cepModel);
+var dbType = process.env.DB || 'leveldb';
+var db = require('../db/' + dbType);
+var cepModel = require('../models/' + dbType + '/cepModel')(db);
+var cepController = require(
+  '../controllers/' + dbType + '/cepController'
+)(cepModel);
 
 router.get('/', function(request, response) {
   response.json({ message: 'Jaiminho CEP API' });
