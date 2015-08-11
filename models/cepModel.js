@@ -8,15 +8,15 @@ function cepModel(db) {
   var $private = {};
 
   $public.findOne = function findOne(cep, callback) {
-    return db.get(cep, callback);
+    db.get(cep, callback);
   };
 
   $public.put = function put(data, callback) {
-    return db.put(data.cep, data, callback);
+    db.put(data.cep, data, callback);
   };
 
   $public.remove = function remove(cep, callback) {
-    return db.del(cep, callback);
+    db.del(cep, callback);
   };
 
   return $public;
