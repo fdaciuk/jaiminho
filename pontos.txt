@@ -1,0 +1,20 @@
+Orientado a rest - 5
+Produtividade - 4
+Maturidade da stack - 4
+Futuro da tecnologia - 4
+Curva de aprendizagem - 3
+Profissionais com conhecimento - 4
+Facilidade de manipular dados persistidos - 4
+Documentação + comunidade ativa - 5
+Monitoramento - 4
+Performance / consumo de recurso - 4
+Testes unitários / integração - 4
+
+
+Cases:
+- Pagar.me
+- Paypal  
+- Linkedin
+- Walmart
+- Eventick
+- Trello

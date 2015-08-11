@@ -22,7 +22,7 @@ function cepController(cepModel) {
     var cep = request.body.cep;
     cepModel.put(request.body, function(error, data) {
       if(error)
-        response.status(500).json({ error: 'Internal Server Error' });
+        return $private.error500(error, response);
       response.json({ message: cep + ' successfully inserted!' });
     });
   };
@@ -35,9 +35,14 @@ function cepController(cepModel) {
     var cep = request.params.cep;
     cepModel.remove(cep, function(error) {
       if(error)
-        response.status(500).json({ error: 'Internal Server Error' });
+        return $private.error500(error, response);
       response.json({ message: cep + ' succesfully removed!' });
     });
+  };
+
+  $private.error500 = function error500(error, response) {
+    debug(error);
+    response.status(500).json({ error: 'Internal Server Error' });
   };
 
   return $public;
