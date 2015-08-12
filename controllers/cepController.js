@@ -1,5 +1,5 @@
 'use strict';
-var debug = require('debug')('jaiminho:cepControllerLevel');
+var debug = require('debug')('jaiminho:cepController');
 
 module.exports = function(cepModel) {
   return cepController(cepModel);
