@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp = require( 'gulp' );
+import gulp from 'gulp';
 var mocha = require( 'gulp-mocha' );
 var istanbul = require( 'gulp-istanbul' );
 
