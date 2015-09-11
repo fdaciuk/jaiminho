@@ -1,18 +1,18 @@
 'use strict';
 
 import gulp from 'gulp';
-var mocha = require( 'gulp-mocha' );
-var istanbul = require( 'gulp-istanbul' );
+import mocha from 'gulp-mocha';
+import istanbul from 'gulp-istanbul';
 
-var testFiles = 'test/**/*.js';
-var srcFiles = '{models,controllers}/**/*.js';
-var allFiles = [ testFiles, srcFiles ];
+const testFiles = 'test/**/*.js';
+const srcFiles = '{models,controllers}/**/*.js';
+const allFiles = [ testFiles, srcFiles ];
 
-gulp.task( 'test', function( done ) {
+gulp.task( 'test', done => {
   gulp.src( srcFiles )
     .pipe( istanbul() )
     .pipe( istanbul.hookRequire() )
-    .on( 'finish', function() {
+    .on( 'finish', () => {
       gulp.src( allFiles )
       .pipe( mocha() )
       .on( 'error', done )
@@ -21,6 +21,7 @@ gulp.task( 'test', function( done ) {
     });
 });
 
-gulp.task( 'default', [ 'test' ], function() {
-  gulp.watch( allFiles, [ 'test' ] );
-});
+gulp.task(
+  'default', [ 'test' ],
+  () => gulp.watch( allFiles, [ 'test' ] )
+);
