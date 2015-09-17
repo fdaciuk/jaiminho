@@ -5,8 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "test": "gulp test",
-    "babel-node": "babel-node --stage 0",
-    "nodemon": "DEBUG=jaiminho:* nodemon --exec npm run babel-node -- ./bin/www"
+    "babel-nodemon": "babel-node --stage 0",
+    "nodemon": "DEBUG=jaiminho:* nodemon --exec npm run babel-nodemon -- ./bin/www"
   },
   "dependencies": {
     "bluebird": "^2.9.34",
