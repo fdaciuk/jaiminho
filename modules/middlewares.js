@@ -1,13 +1,13 @@
 'use strict';
-module.exports = function(app) {
-  app.use(function(req, res, next) {
+export default (app) => {
+  app.use((req, res, next) => {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
   });
 
   if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
+    app.use((err, req, res, next) => {
       res.status(err.status || 500);
       res.json({
         message: err.message,
@@ -16,7 +16,7 @@ module.exports = function(app) {
     });
   }
 
-  app.use(function(err, req, res, next) {
+  app.use((err, req, res, next) => {
     res.status(err.status || 500);
     res.json({
       message: err.message,

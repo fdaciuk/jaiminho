@@ -1,21 +1,18 @@
 'use strict';
-module.exports = function(db) {
-  return cepModel(db);
-};
 
-function cepModel(db) {
+export default function cepModel(db) {
   var $public = {};
   var $private = {};
 
-  $public.findOne = function findOne(cep, callback) {
+  $public.findOne = (cep, callback) => {
     db.get(cep, callback);
   };
 
-  $public.put = function put(data, callback) {
+  $public.put = (data, callback) => {
     db.put(data.cep, data, callback);
   };
 
-  $public.remove = function remove(cep, callback) {
+  $public.remove = (cep, callback) => {
     db.del(cep, callback);
   };
 
