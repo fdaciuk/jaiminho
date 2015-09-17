@@ -15,12 +15,12 @@ export default function cepController(cepModel) {
     });
   };
 
-  $public.create = function create(request, response) {
+  $public.create = (request, response) => {
     var cep = request.body.cep;
-    cepModel.put(request.body, function(error, data) {
+    cepModel.put(request.body, (error, data) => {
       if(error)
         return $private.error500(error, response);
-      response.json({ message: cep + ' successfully inserted!' });
+      response.json({ message: `${cep} successfully inserted!` });
     });
   };
 
