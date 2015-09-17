@@ -1,8 +1,8 @@
 'use strict';
 
 export default function cepModel(db) {
-  var $public = {};
-  var $private = {};
+  let $public = {};
+  let $private = {};
 
   $public.findOne = (cep, callback) => {
     db.get(cep, callback);

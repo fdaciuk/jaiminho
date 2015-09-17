@@ -3,8 +3,8 @@
 let debug = require('debug')('jaiminho:cepController');
 
 export default function cepController(cepModel) {
-  var $public = {};
-  var $private = {};
+  let $public = {};
+  let $private = {};
 
   $public.retrieveOne = (request, response) => {
     let cep = request.params.cep;
@@ -16,7 +16,7 @@ export default function cepController(cepModel) {
   };
 
   $public.create = (request, response) => {
-    var cep = request.body.cep;
+    let cep = request.body.cep;
     cepModel.put(request.body, (error, data) => {
       if(error)
         return $private.error500(error, response);
@@ -27,7 +27,7 @@ export default function cepController(cepModel) {
   $public.update = $public.create;
 
   $public.remove = (request, response) => {
-    var cep = request.params.cep;
+    let cep = request.params.cep;
     cepModel.remove(cep, (error) => {
       if(error)
         return $private.error500(error, response);
