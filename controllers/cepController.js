@@ -24,20 +24,18 @@ export default function cepController(cepModel) {
     });
   };
 
-  $public.update = function update(request, response) {
-    $public.create(request, response, message);
-  };
+  $public.update = $public.create;
 
-  $public.remove = function remove(request, response) {
+  $public.remove = (request, response) => {
     var cep = request.params.cep;
-    cepModel.remove(cep, function(error) {
+    cepModel.remove(cep, (error) => {
       if(error)
         return $private.error500(error, response);
-      response.json({ message: cep + ' succesfully removed!' });
+      response.json({ message: `${cep} succesfully removed!` });
     });
   };
 
-  $private.error500 = function error500(error, response) {
+  $private.error500 = (error, response) => {
     debug(error);
     response.status(500).json({ error: 'Internal Server Error' });
   };
