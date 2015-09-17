@@ -1,19 +1,16 @@
 'use strict';
-var debug = require('debug')('jaiminho:cepController');
 
-module.exports = function(cepModel) {
-  return cepController(cepModel);
-};
+let debug = require('debug')('jaiminho:cepController');
 
-function cepController(cepModel) {
+export default function cepController(cepModel) {
   var $public = {};
   var $private = {};
 
-  $public.retrieveOne = function retrieveOne(request, response) {
-    var cep = request.params.cep;
-    cepModel.findOne(cep, function(error, data) {
+  $public.retrieveOne = (request, response) => {
+    let cep = request.params.cep;
+    cepModel.findOne(cep, (error, data) => {
       if(error)
-        response.status(404).json({ error: 'CEP ' + cep + ' not found' });
+        response.status(404).json({ error: `CEP ${cep} not found` });
       response.json(data);
     });
   };
