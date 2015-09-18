@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "test": "gulp test",
-    "babel-nodemon": "babel-node --stage 0",
+    "babel-nodemon": "babel-node --debug --stage 0",
     "nodemon": "DEBUG=jaiminho:* nodemon --exec npm run babel-nodemon -- ./bin/www"
   },
   "dependencies": {
