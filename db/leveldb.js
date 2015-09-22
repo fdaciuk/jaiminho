@@ -1,3 +1,3 @@
 'use strict';
-import levelup from 'levelup';
-export default levelup('./db/cep', { valueEncoding: 'json' });
+import level from 'level';
+export default level('./db/cep', { valueEncoding: 'json' });
