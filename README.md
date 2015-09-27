@@ -6,10 +6,10 @@
 
 ## Dependencies
 
-You need to install `nodemon` globally:
+You need to install `nodemon` and `babel` globally:
 
 ```sh
-[sudo] npm i -g nodemon
+[sudo] npm i -g nodemon babel
 ```
 
 Now, you need to install project dependencies with command:
