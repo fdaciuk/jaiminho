@@ -1,9 +1,9 @@
 'use strict';
 
 let debug = require('debug')('jaiminho:test');
-import app from '../../app';
 import request from 'supertest';
-import 'should';
+import { expect } from 'chai';
+import app from '../../app';
 
 describe('Test Jaiminho API', () => {
   it('GET /cep returns `{"message":"Jaiminho CEP API"}`', done => {
@@ -12,7 +12,7 @@ describe('Test Jaiminho API', () => {
       .end((error, response) => {
         let result = response.text;
         debug(error, result);
-        result.should.be.equal('{"message":"Jaiminho CEP API"}');
+        expect(result).to.be.equal('{"message":"Jaiminho CEP API"}');
         done();
       });
   });
