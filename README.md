@@ -14,10 +14,34 @@ If you want to use docker, just install Docker and run in this directory:
 ./jaiminho build
 ```
 
+After that, install NodeJS packages:
+
+```sh
+./jaiminho install
+```
+
 And, after installation, run:
 
 ```sh
 ./jaiminho start
+```
+
+To see all commands:
+
+```sh
+./jaiminho help
+```
+
+To run in debug mode:
+
+```sh
+./jaiminho debug
+```
+
+To run tests:
+
+```sh
+./jaiminho test
 ```
 
 To run a specific command:
