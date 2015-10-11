@@ -8,7 +8,7 @@
 
 ## Using Docker
 
-If you want to use docker, just install Docker and run in this directory:
+If you want to use docker, just install it and run in this directory:
 
 ```sh
 ./jaiminho build
@@ -50,7 +50,8 @@ To run a specific command:
 ./jaiminho run <command>
 ```
 
-**Note:** `./jaiminho` file needs to have permission to execute:
+**Note:** If above commands don't work, you need to give execution permission for the `./jaiminho` file:
+
 
 ```sh
 chmod +x ./jaiminho
@@ -58,10 +59,10 @@ chmod +x ./jaiminho
 
 ## Without using docker
 
-You need to install `nodemon` and `babel` globally:
+You need to install `nodemon` and `istanbul` globally:
 
 ```sh
-[sudo] npm i -g nodemon babel
+[sudo] npm i -g nodemon istanbul 
 ```
 
 Now, you need to install project dependencies with command:
