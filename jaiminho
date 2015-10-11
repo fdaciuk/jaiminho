@@ -5,26 +5,36 @@ init_docker() {
 }
 
 case "$1" in
-  "install")
-    init_docker npm i ;;
-
-  "start")
-    init_docker npm run nodemon ;;
-
-  "run")
-    init_docker ;;
-
-  "build")
+  "build" )
     docker build -t jaiminho . ;;
 
-  *)
-  cat<<EOF
-  Jaiminho CLI
-  Usage: ./jaiminho <command> [<anothercommand>]
+  "install" )
+    init_docker npm i ;;
 
-  Available commands:
-  build:                Build docker image
-  run <anothercommand>: Run docker image with command inside container passed to <anothercommand>
+  "test" )
+    init_docker npm test ;;
+
+  "start" )
+    init_docker npm start ;;
+
+  "debug" )
+    init_docker npm run nodemon ;;
+
+  "run" )
+    init_docker ${@:2} ;;
+
+  * )
+    cat<<EOF
+    Jaiminho CLI
+    Usage: ./jaiminho <command> [<anothercommand>]
+
+    Available commands:
+    build:                Build docker image
+    install:              Install NodeJS packages
+    test:                 Run tests
+    start:                Start server
+    debug:                Start server with debugger (on port 5858)
+    run <anothercommand>: Run docker image with command inside container passed to <anothercommand>
 
 EOF
 ;;
