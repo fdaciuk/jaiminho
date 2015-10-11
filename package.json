@@ -5,7 +5,8 @@
   "scripts": {
     "start": "babel-node ./bin/www",
     "test": "istanbul cover ./node_modules/mocha/bin/_mocha  -w -- --compilers js:babel/register --recursive",
-    "babel-nodemon": "babel-node --debug-brk --stage 0",
+    "babel-nodemon-debug": "babel-node --debug-brk --stage 0",
+    "babel-nodemon": "babel-node --stage 0",
     "nodemon": "DEBUG=jaiminho:* nodemon --exec npm run babel-nodemon -- ./bin/www"
   },
   "dependencies": {
