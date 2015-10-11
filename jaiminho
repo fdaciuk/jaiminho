@@ -1,0 +1,31 @@
+#!/bin/bash
+
+init_docker() {
+  docker run -it --rm -v $(pwd):/app -p 3000:3000 -p 5858:5858 jaiminho "$@"
+}
+
+case "$1" in
+  "install")
+    init_docker npm i ;;
+
+  "start")
+    init_docker npm run nodemon ;;
+
+  "run")
+    init_docker ;;
+
+  "build")
+    docker build -t jaiminho . ;;
+
+  *)
+  cat<<EOF
+  Jaiminho CLI
+  Usage: ./jaiminho <command> [<anothercommand>]
+
+  Available commands:
+  build:         Build docker image
+  run <anothercommand>: Run docker image with command inside container passed to <anothercommand>
+
+EOF
+;;
+esac
