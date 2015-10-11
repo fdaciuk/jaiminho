@@ -23,7 +23,7 @@ case "$1" in
   Usage: ./jaiminho <command> [<anothercommand>]
 
   Available commands:
-  build:         Build docker image
+  build:                Build docker image
   run <anothercommand>: Run docker image with command inside container passed to <anothercommand>
 
 EOF
