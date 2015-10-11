@@ -6,6 +6,34 @@
 
 ## Dependencies
 
+## Using Docker
+
+If you want to use docker, just install Docker and run in this directory:
+
+```sh
+./jaiminho build
+```
+
+And, after installation, run:
+
+```sh
+./jaiminho start
+```
+
+To run a specific command:
+
+```sh
+./jaiminho run <command>
+```
+
+**Note:** `./jaiminho` file needs to have permission to execute:
+
+```sh
+chmod +x ./jaiminho
+```
+
+## Without using docker
+
 You need to install `nodemon` and `babel` globally:
 
 ```sh
