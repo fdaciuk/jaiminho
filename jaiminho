@@ -23,7 +23,7 @@ case "$1" in
   "run" )
     init_docker ${@:2} ;;
 
-  * )
+  "help" | * )
     cat<<EOF
     Jaiminho CLI
     Usage: ./jaiminho <command> [<anothercommand>]
