@@ -7,8 +7,8 @@ RUN echo "http://nl.alpinelinux.org/alpine/edge/main" | \
 
   # Install packages
   && apk add --update \
-    # g++ \
-    # gcc \
+    g++ \
+    gcc \
     make \
     bash \
     python \
