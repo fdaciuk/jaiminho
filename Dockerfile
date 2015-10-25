@@ -12,8 +12,8 @@ RUN echo "http://nl.alpinelinux.org/alpine/edge/main" | \
 
   && rm -rf /var/cache/apk/* \
 
- # NodeJS modules
- && npm i -g \
+  # NodeJS modules
+  && npm i -g \
   nodemon \
   istanbul
 
